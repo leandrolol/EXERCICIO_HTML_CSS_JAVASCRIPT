@@ -1,31 +1,27 @@
-const form = document.getElementById('meuFormulario');
-
-function validaCampo (campoMaior){
-    const numeroComoArray = campoA.value > campoB.value;
-    return numeroComoArray.valueOf 
-}
-
-form.addEventListener('submit', function(e){
-    e.preventDefault();
-
-    const campoA = parseInt (document.getElementById('campoA').value);
-    const campoB = parseInt (document.getElementById('campoB').value);
-
-    if (campoA > campoB){
-        const containerMensagemSucesso = document.querySelector('.sucesso');
-        containerMensagemSucesso.innerHTML = 'Parabéns!! O valor é válido';
-        containerMensagemSucesso.style.display = 'block';
-    form.reset()
-    }else{
-        form.campoA.style.border = '1px solid red';
-        form.campoB.style.border = '1px solid red';
-    
-        const containerMensagemErro = document.querySelector('.erro').style.display = 'block';
-        containerMensagemErro.innerHTML = ' Campo A não pode ser menor que Campo B';
-        containerMensagemErro.style.display = 'block';
-    }
-
-
-})
-
-console.log(form);
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Formulário Obrigatório</h1>
+    <p>Preencha os campos abaixo:</p>
+    <div class="container">
+        <form id="meuFormulario">
+            <label for="campoA">Campo A:</label>
+            <input type="number" id="campoA" required placeholder="Digite o valor"><br>
+            <label for="campoB">Campo B:</label>
+            <input type="number" id="campoB" required placeholder="Digite o valor"><br>
+            <button id="btn-depositar" type="submit"><b>Conferir Valores</b></button>
+            <p class="erro" style="display: none;">
+                Campo A não pode ser menor que Campo B
+            </p>
+            <p class="sucesso" style="display: none;"></p>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
